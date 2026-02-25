@@ -213,6 +213,33 @@ form {
   max-width: 700px;
   margin: 0 auto;
 }
+/* =========================
+   EXPANDABLE CARD SYSTEM
+   ========================= */
+
+.expand-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  background: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.expand-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 15px;
+  color: var(--muted-text);
+}
+
+.card.active .expand-content {
+  max-height: 500px;
+}
 
 form input,
 form textarea,
