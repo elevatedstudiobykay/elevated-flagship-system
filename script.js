@@ -72,3 +72,29 @@ document.getElementById("booking-form").addEventListener("submit", function(e) {
   });
 
 });
+
+// ===============================
+// SCROLL FADE SYSTEM
+// ===============================
+
+const faders = document.querySelectorAll("section");
+
+const appearOptions = {
+  threshold: 0.15
+};
+
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  fader.classList.add("fade-in");
+  appearOnScroll.observe(fader);
+});
