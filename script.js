@@ -106,3 +106,23 @@ navLinks.forEach(link => {
     link.style.color = "var(--accent-color)";
   }
 });
+// =====================================
+// DEMO THEME SWITCHER
+// =====================================
+
+const themeButtons = document.querySelectorAll(".theme-switcher button");
+
+themeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+
+    // Remove existing theme classes
+    document.body.classList.remove("dark-theme", "soft-theme");
+
+    // Apply selected theme if not default
+    const theme = button.getAttribute("data-theme");
+    if (theme) {
+      document.body.classList.add(theme);
+    }
+
+  });
+});
