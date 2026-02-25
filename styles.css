@@ -359,3 +359,33 @@ footer {
   color: var(--muted-text);
   margin-top: 20px;
 }
+/* =========================
+   DEMO THEME SWITCHER
+   ========================= */
+
+.theme-switcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--surface-color);
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid var(--border-soft);
+  display: flex;
+  gap: 8px;
+  z-index: 9999;
+}
+
+.theme-switcher button {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: 0.3s ease;
+}
+
+.theme-switcher button:hover {
+  color: var(--accent-color);
+}
