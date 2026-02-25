@@ -2,16 +2,20 @@
 // EXPANDABLE ARRANGEMENTS
 // =====================================
 
-document.querySelectorAll(".expand-btn").forEach(button => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".card");
-    card.classList.toggle("active");
+const expandButtons = document.querySelectorAll(".expand-btn");
 
-    button.textContent = card.classList.contains("active")
-      ? "Hide Details"
-      : "View Details";
+if (expandButtons.length > 0) {
+  expandButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".card");
+      card.classList.toggle("active");
+
+      button.textContent = card.classList.contains("active")
+        ? "Hide Details"
+        : "View Details";
+    });
   });
-});
+}
 
 
 // =====================================
