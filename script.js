@@ -34,6 +34,10 @@ if (bookingForm) {
 
     const form = this;
     const status = document.getElementById("form-status");
+    const submitBtn = form.querySelector("button");
+
+submitBtn.disabled = true;
+submitBtn.textContent = "Sending...";
 
     // 1️⃣ Send to Companion
     emailjs.sendForm(
@@ -51,14 +55,17 @@ if (bookingForm) {
       );
 
     })
-    .then(() => {
-      status.innerText = "Inquiry received. Please check your email for confirmation.";
-      form.reset();
-    })
-    .catch(() => {
-      status.innerText = "There was an issue sending your inquiry. Please try again.";
-    });
-
+ .then(() => {
+  status.innerText = "Inquiry received. Please check your email for confirmation.";
+  submitBtn.disabled = false;
+  submitBtn.textContent = "Submit Inquiry";
+  form.reset();
+})
+  .catch(() => {
+  status.innerText = "There was an issue sending your inquiry. Please verify your information and try again.";
+  submitBtn.disabled = false;
+  submitBtn.textContent = "Submit Inquiry";
+});
   });
 }
 
