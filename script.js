@@ -118,7 +118,10 @@ const allThemes = [
   "midnight-theme",
   "champagne-theme",
   "power-theme",
-  "rose-noir-theme"
+  "rose-noir-theme",
+  "emerald-theme",
+  "warm-neutral-theme",
+  "mauve-theme"
 ];
 
 themeButtons.forEach(button => {
