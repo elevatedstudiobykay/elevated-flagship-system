@@ -1,1 +1,268 @@
+/* =========================================
+   ELEVATED FLAGSHIP SYSTEM — LIGHT LUXURY
+   ========================================= */
 
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   THEME VARIABLES
+   Swap ONLY these for client rebrand
+   ========================= */
+
+:root {
+  --background-color: #f8f6f2;
+  --surface-color: #ffffff;
+  --primary-color: #1c1c1c;
+  --accent-color: #c6a47e;
+  --muted-text: #777;
+  --border-soft: rgba(0,0,0,0.08);
+}
+
+/* =========================
+   GLOBAL BODY
+   ========================= */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background-color);
+  color: var(--primary-color);
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  overflow-x: hidden;
+}
+
+/* Fade in page */
+body {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  background: var(--surface-color);
+  padding: 22px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-soft);
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  margin: 0 22px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+}
+
+/* =========================
+   SECTION BASE
+   ========================= */
+
+section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2.2rem;
+}
+
+/* =========================
+   CARDS (Reusable System)
+   ========================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background: var(--surface-color);
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-color);
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.card .price {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card .details {
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.button-primary {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.button-primary:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   GALLERY GRID
+   ========================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* =========================
+   FORM SYSTEM
+   ========================= */
+
+form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  font-family: inherit;
+  font-size: 15px;
+  background: var(--surface-color);
+  transition: 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  padding: 80px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted-text);
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  section {
+    padding: 70px 20px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 8px 12px;
+  }
+
+}
