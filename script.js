@@ -107,20 +107,31 @@ navLinks.forEach(link => {
   }
 });
 // =====================================
-// DEMO THEME SWITCHER
+// DEMO THEME SWITCHER (MULTI-THEME)
 // =====================================
 
 const themeButtons = document.querySelectorAll(".theme-switcher button");
 
+const allThemes = [
+  "dark-theme",
+  "soft-theme",
+  "midnight-theme",
+  "champagne-theme",
+  "power-theme",
+  "rose-noir-theme"
+];
+
 themeButtons.forEach(button => {
   button.addEventListener("click", () => {
 
-    // Remove existing theme classes
-    document.body.classList.remove("dark-theme", "soft-theme");
+    // Remove ALL theme classes first
+    document.body.classList.remove(...allThemes);
 
-    // Apply selected theme if not default
+    // Get selected theme
     const theme = button.getAttribute("data-theme");
-    if (theme) {
+
+    // Apply if not default
+    if (theme && allThemes.includes(theme)) {
       document.body.classList.add(theme);
     }
 
