@@ -458,9 +458,23 @@ footer {
   bottom: 20px;
   right: 20px;
   display: flex;
+  align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+
+  background: var(--surface-color);
+  border: 1px solid var(--border-soft);
+  padding: 8px 14px;
+  border-radius: 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   z-index: 2000;
+}
+
+.theme-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted-text);
+  margin-right: 6px;
 }
 
 .swatch {
@@ -475,4 +489,10 @@ footer {
 
 .swatch:hover {
   transform: scale(1.15);
+}
+
+/* Active Swatch State */
+.swatch.active {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
