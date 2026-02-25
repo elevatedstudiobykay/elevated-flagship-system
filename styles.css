@@ -130,17 +130,19 @@ body.warm-neutral-theme {
   --muted-text: #8c8175;
   --border-soft: rgba(0,0,0,0.06);
 }
+
 /* =========================
-   SULTRY MAUVE THEME
+   FLIRTY MAUVE THEME (DEEP ROMANTIC)
    ========================= */
 
 body.mauve-theme {
-  --background-color: #e9d8e0;
+  --background-color: #efe2e8;
   --surface-color: #ffffff;
-  --primary-color: #2b1f25;
-  --accent-color: #7d3e57;
-  --muted-text: #6e5961;
-  --border-soft: rgba(0,0,0,0.05);
+  --primary-color: #2c1f25;
+  --accent-color: #8f4b63;
+  --muted-text: #735a63;
+  --border-soft: rgba(0,0,0,0.06);
+  --button-text-color: #ffffff;
 }
 /* =========================
    GLOBAL BODY
