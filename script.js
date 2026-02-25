@@ -35,3 +35,40 @@ document.getElementById("booking-form").addEventListener("submit", function(e) {
     status.innerText = "There was an error sending your inquiry. Please try again.";
   });
 });
+// ===============================
+// EMAILJS BOOKING SYSTEM
+// ===============================
+
+emailjs.init("{{EMAILJS_PUBLIC_KEY}}");
+
+document.getElementById("booking-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = this;
+  const status = document.getElementById("form-status");
+
+  // 1️⃣ Send to Companion
+  emailjs.sendForm(
+    "{{EMAILJS_SERVICE_ID}}",
+    "{{COMPANION_TEMPLATE_ID}}",
+    form
+  )
+  .then(() => {
+
+    // 2️⃣ Send Confirmation to Client
+    return emailjs.sendForm(
+      "{{EMAILJS_SERVICE_ID}}",
+      "{{CLIENT_CONFIRMATION_TEMPLATE_ID}}",
+      form
+    );
+
+  })
+  .then(() => {
+    status.innerText = "Inquiry received. Please check your email for confirmation.";
+    form.reset();
+  })
+  .catch(() => {
+    status.innerText = "There was an issue sending your inquiry. Please try again.";
+  });
+
+});
