@@ -110,7 +110,7 @@ navLinks.forEach(link => {
 // DEMO THEME SWITCHER (MULTI-THEME)
 // =====================================
 
-const themeButtons = document.querySelectorAll(".theme-switcher button");
+const themeButtons = document.querySelectorAll(".swatch");
 
 const allThemes = [
   "dark-theme",
