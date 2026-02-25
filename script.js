@@ -14,7 +14,7 @@ if (expandButtons.length > 0) {
         ? "Hide Details"
         : "View Details";
     });
-  });
+  }); 
 }
 
 
