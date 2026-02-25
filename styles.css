@@ -106,7 +106,42 @@ body.rose-noir-theme {
   --border-soft: rgba(255,255,255,0.05);
   --button-text-color: #ffffff;
 }
+/* =========================
+   EMERALD LUXE THEME
+   ========================= */
 
+body.emerald-theme {
+  --background-color: #0f1a16;
+  --surface-color: #16231f;
+  --primary-color: #f1f5f2;
+  --accent-color: #1f7a5c;
+  --muted-text: #9fb3aa;
+  --border-soft: rgba(255,255,255,0.08);
+}
+/* =========================
+   WARM NEUTRAL THEME
+   ========================= */
+
+body.warm-neutral-theme {
+  --background-color: #f3ede6;
+  --surface-color: #ffffff;
+  --primary-color: #3a332c;
+  --accent-color: #b58a5f;
+  --muted-text: #8c8175;
+  --border-soft: rgba(0,0,0,0.06);
+}
+/* =========================
+   FLIRTY MAUVE THEME
+   ========================= */
+
+body.mauve-theme {
+  --background-color: #f7eef3;
+  --surface-color: #ffffff;
+  --primary-color: #3b2e34;
+  --accent-color: #b76e8a;
+  --muted-text: #9a7f89;
+  --border-soft: rgba(0,0,0,0.05);
+}
 /* =========================
    GLOBAL BODY
    ========================= */
