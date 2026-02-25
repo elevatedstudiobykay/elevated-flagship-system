@@ -54,6 +54,58 @@ body.soft-theme {
   --muted-text: #888;
   --border-soft: rgba(0,0,0,0.05);
 }
+/* =========================
+   THEME 04 — MIDNIGHT EDITORIAL
+   ========================= */
+
+body.midnight-theme {
+  --background-color: #0c0c0f;
+  --surface-color: #16161b;
+  --primary-color: #f2f2f2;
+  --accent-color: #c4a15a;
+  --muted-text: #9a9a9a;
+  --border-soft: rgba(255,255,255,0.06);
+  --button-text-color: #ffffff;
+}
+/* =========================
+   THEME 05 — CHAMPAGNE NEUTRAL
+   ========================= */
+
+body.champagne-theme {
+  --background-color: #f5efe6;
+  --surface-color: #ffffff;
+  --primary-color: #2d2d2d;
+  --accent-color: #b89b72;
+  --muted-text: #8b7f70;
+  --border-soft: rgba(0,0,0,0.06);
+  --button-text-color: #ffffff;
+}
+/* =========================
+   THEME 06 — POWER MINIMAL
+   ========================= */
+
+body.power-theme {
+  --background-color: #ffffff;
+  --surface-color: #ffffff;
+  --primary-color: #111111;
+  --accent-color: #000000;
+  --muted-text: #666;
+  --border-soft: rgba(0,0,0,0.1);
+  --button-text-color: #ffffff;
+}
+/* =========================
+   THEME 07 — ROSE NOIR
+   ========================= */
+
+body.rose-noir-theme {
+  --background-color: #1a0f14;
+  --surface-color: #23141b;
+  --primary-color: #f3e9ec;
+  --accent-color: #b04c72;
+  --muted-text: #a67a88;
+  --border-soft: rgba(255,255,255,0.05);
+  --button-text-color: #ffffff;
+}
 
 /* =========================
    GLOBAL BODY
