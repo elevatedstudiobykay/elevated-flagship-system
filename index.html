@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{CLIENT_NAME}} | Private Arrangements</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -32,91 +30,28 @@
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section>
-    <h2>About</h2>
-    <p style="max-width: 700px; margin: 0 auto; text-align:center;">
-      {{ABOUT_INTRO_PARAGRAPH}}
+  <!-- OPTIONAL POSITIONING SECTION -->
+  <section style="text-align:center; max-width:700px;">
+    <h2>{{HOME_STATEMENT_TITLE}}</h2>
+    <p>
+      {{HOME_POSITIONING_PARAGRAPH}}
     </p>
-  </section>
-
-  <!-- ARRANGEMENTS PREVIEW -->
-  <section>
-    <h2>Arrangements</h2>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>{{ARRANGEMENT_TITLE_1}}</h3>
-        <div class="price">{{PRICE_1}}</div>
-        <div class="details">
-          {{SHORT_DESCRIPTION_1}}
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>{{ARRANGEMENT_TITLE_2}}</h3>
-        <div class="price">{{PRICE_2}}</div>
-        <div class="details">
-          {{SHORT_DESCRIPTION_2}}
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>{{ARRANGEMENT_TITLE_3}}</h3>
-        <div class="price">{{PRICE_3}}</div>
-        <div class="details">
-          {{SHORT_DESCRIPTION_3}}
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- GALLERY PREVIEW -->
-  <section>
-    <h2>Gallery</h2>
-
-    <div class="gallery-grid">
-      <img src="assets/images/placeholder1.jpg" alt="Gallery image">
-      <img src="assets/images/placeholder2.jpg" alt="Gallery image">
-      <img src="assets/images/placeholder3.jpg" alt="Gallery image">
-      <img src="assets/images/placeholder4.jpg" alt="Gallery image">
-    </div>
-
-  </section>
-
-  <!-- ONLINE SERVICES PREVIEW -->
-  <section>
-    <h2>Online Services</h2>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>{{ONLINE_SERVICE_1}}</h3>
-        <div class="price">{{ONLINE_PRICE_1}}</div>
-        <div class="details">
-          {{ONLINE_DESCRIPTION_1}}
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>{{ONLINE_SERVICE_2}}</h3>
-        <div class="price">{{ONLINE_PRICE_2}}</div>
-        <div class="details">
-          {{ONLINE_DESCRIPTION_2}}
-        </div>
-      </div>
-
-    </div>
   </section>
 
   <!-- FINAL CTA -->
   <section style="text-align:center;">
-    <h2>Discretion. Intention. Alignment.</h2>
     <a href="booking.html" class="button-primary">Begin Inquiry</a>
   </section>
 
+<section class="home-intent">
+  <div class="home-intent-inner">
+    <h2>Discretion. Refinement. Control.</h2>
+    <p>
+      {{HOME_INTENT_STATEMENT}}
+    </p>
+  </div>
+</section>
+  
   <!-- FOOTER -->
   <footer>
     © {{YEAR}} {{CLIENT_NAME}}. All Rights Reserved.
