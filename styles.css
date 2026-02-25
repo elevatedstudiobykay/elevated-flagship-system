@@ -16,6 +16,10 @@
    Swap ONLY these for client rebrand
    ========================= */
 
+/* =========================
+   DEFAULT THEME (Light Luxury)
+   ========================= */
+
 :root {
   --background-color: #f8f6f2;
   --surface-color: #ffffff;
@@ -23,6 +27,32 @@
   --accent-color: #c6a47e;
   --muted-text: #777;
   --border-soft: rgba(0,0,0,0.08);
+  --button-text-color: #ffffff;
+}
+/* =========================
+   DARK LUXURY THEME
+   ========================= */
+
+body.dark-theme {
+  --background-color: #111111;
+  --surface-color: #1c1c1c;
+  --primary-color: #f5f5f5;
+  --accent-color: #b48bff;
+  --muted-text: #aaa;
+  --border-soft: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   SOFT FEMININE THEME
+   ========================= */
+
+body.soft-theme {
+  --background-color: #fff6f9;
+  --surface-color: #ffffff;
+  --primary-color: #2c2c2c;
+  --accent-color: #d88aa6;
+  --muted-text: #888;
+  --border-soft: rgba(0,0,0,0.05);
 }
 
 /* =========================
@@ -36,10 +66,7 @@ body {
   line-height: 1.7;
   letter-spacing: 0.3px;
   overflow-x: hidden;
-}
 
-/* Fade in page */
-body {
   opacity: 0;
   animation: fadeIn 1.2s ease forwards;
 }
@@ -179,7 +206,7 @@ h2 {
   margin-top: 30px;
   padding: 14px 36px;
   background: var(--accent-color);
-  color: #fff;
+  color: var(--button-text-color);
   border-radius: 30px;
   text-decoration: none;
   font-size: 13px;
