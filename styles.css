@@ -131,15 +131,15 @@ body.warm-neutral-theme {
   --border-soft: rgba(0,0,0,0.06);
 }
 /* =========================
-   FLIRTY MAUVE THEME
+   SULTRY MAUVE THEME
    ========================= */
 
 body.mauve-theme {
-  --background-color: #f7eef3;
+  --background-color: #e9d8e0;
   --surface-color: #ffffff;
-  --primary-color: #3b2e34;
-  --accent-color: #b76e8a;
-  --muted-text: #9a7f89;
+  --primary-color: #2b1f25;
+  --accent-color: #7d3e57;
+  --muted-text: #6e5961;
   --border-soft: rgba(0,0,0,0.05);
 }
 /* =========================
