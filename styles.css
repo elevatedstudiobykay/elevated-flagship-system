@@ -141,8 +141,9 @@ h2 {
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--accent-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .card h3 {
