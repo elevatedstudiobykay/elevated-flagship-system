@@ -2,20 +2,12 @@
    IDENTITY LAYER — FULL COLOR + TYPOGRAPHY
    ========================================= */
 
-
-/* =========================================
-   01 — The Heiress (Default Soft Luxury)
-   ========================================= */
-
+/* 01 — The Heiress (Default Soft Base) */
 body:not(.champagne-theme):not(.warm-neutral-theme):not(.soft-theme):not(.mauve-theme):not(.rose-noir-theme):not(.emerald-theme):not(.dark-theme):not(.midnight-theme):not(.power-theme) {
   --heading-font: 'Cormorant Garamond', serif;
 }
 
-
-/* =========================================
-   02 — The Muse (Espresso Luxe) — UPDATED
-   ========================================= */
-
+/* 02 — The Muse (Espresso Luxe) */
 body.champagne-theme {
   --background-color: #f4efe8;
   --surface-color: #ffffff;
@@ -27,11 +19,7 @@ body.champagne-theme {
   --heading-font: 'Cormorant Garamond', serif;
 }
 
-
-/* =========================================
-   03 — The Intimate (Royal Blue Elite) — UPDATED
-   ========================================= */
-
+/* 03 — The Intimate (Royal Blue Elite) */
 body.warm-neutral-theme {
   --background-color: #0e1a2b;
   --surface-color: #16263f;
@@ -43,11 +31,7 @@ body.warm-neutral-theme {
   --heading-font: 'Cormorant Garamond', serif;
 }
 
-
-/* =========================================
-   04 — The Romantic (Soft Feminine)
-   ========================================= */
-
+/* 04 — The Romantic */
 body.soft-theme {
   --background-color: #fff6f9;
   --surface-color: #ffffff;
@@ -59,11 +43,7 @@ body.soft-theme {
   --heading-font: 'DM Serif Display', serif;
 }
 
-
-/* =========================================
-   05 — The Seductress (Mauve Romantic)
-   ========================================= */
-
+/* 05 — The Seductress */
 body.mauve-theme {
   --background-color: #efe2e8;
   --surface-color: #ffffff;
@@ -75,11 +55,7 @@ body.mauve-theme {
   --heading-font: 'DM Serif Display', serif;
 }
 
-
-/* =========================================
-   06 — The Femme Fatale (Rose Noir)
-   ========================================= */
-
+/* 06 — The Femme Fatale */
 body.rose-noir-theme {
   --background-color: #1a0f14;
   --surface-color: #23141b;
@@ -91,11 +67,7 @@ body.rose-noir-theme {
   --heading-font: 'Prata', serif;
 }
 
-
-/* =========================================
-   07 — The Old Money (Emerald Luxe)
-   ========================================= */
-
+/* 07 — The Old Money */
 body.emerald-theme {
   --background-color: #0f1a16;
   --surface-color: #16231f;
@@ -107,11 +79,7 @@ body.emerald-theme {
   --heading-font: 'Cormorant Garamond', serif;
 }
 
-
-/* =========================================
-   08 — The Night Elite (Dark Luxury)
-   ========================================= */
-
+/* 08 — The Night Elite */
 body.dark-theme {
   --background-color: #111111;
   --surface-color: #1c1c1c;
@@ -123,11 +91,7 @@ body.dark-theme {
   --heading-font: 'Prata', serif;
 }
 
-
-/* =========================================
-   09 — The Editorial (Midnight)
-   ========================================= */
-
+/* 09 — The Editorial */
 body.midnight-theme {
   --background-color: #0c0c0f;
   --surface-color: #16161b;
@@ -139,11 +103,7 @@ body.midnight-theme {
   --heading-font: 'Prata', serif;
 }
 
-
-/* =========================================
-   10 — The Executive (Power Minimal)
-   ========================================= */
-
+/* 10 — The Executive */
 body.power-theme {
   --background-color: #ffffff;
   --surface-color: #ffffff;
