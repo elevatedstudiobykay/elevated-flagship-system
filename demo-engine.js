@@ -72,8 +72,13 @@ themeButtons.forEach(button => {
     button.classList.add("active");
 
     if (identityLabel) {
-      identityLabel.textContent = identityNames[theme];
-    }
+  identityLabel.style.opacity = 0;
+
+  setTimeout(() => {
+    identityLabel.textContent = identityNames[theme];
+    identityLabel.style.opacity = 1;
+  }, 120);
+}
 
   });
 });
