@@ -71,13 +71,20 @@ themeButtons.forEach(button => {
 
     button.classList.add("active");
 
-    if (identityLabel) {
+ if (identityLabel) {
+
+  // Clear any previous fade timers
+  if (identityLabel.fadeTimeout) {
+    clearTimeout(identityLabel.fadeTimeout);
+  }
+
   identityLabel.style.opacity = 0;
 
-  setTimeout(() => {
+  identityLabel.fadeTimeout = setTimeout(() => {
     identityLabel.textContent = identityNames[theme];
     identityLabel.style.opacity = 1;
   }, 120);
+
 }
 
   });
