@@ -1,115 +1,102 @@
-/* =========================
-   DARK LUXURY THEME
-   ========================= */
+/* =========================================
+   IDENTITY TYPOGRAPHY LAYER
+   ========================================= */
 
-body.dark-theme {
-  --background-color: #111111;
-  --surface-color: #1c1c1c;
-  --primary-color: #f5f5f5;
-  --accent-color: #b48bff;
-  --muted-text: #aaa;
-  --border-soft: rgba(255,255,255,0.08);
+/* 01 — The Heiress (Default) */
+body:not(.champagne-theme):not(.warm-neutral-theme):not(.soft-theme):not(.mauve-theme):not(.rose-noir-theme):not(.emerald-theme):not(.dark-theme):not(.midnight-theme):not(.power-theme) {
+  --heading-font: 'Cormorant Garamond', serif;
 }
 
-/* =========================
-   SOFT FEMININE THEME
-   ========================= */
-
-body.soft-theme {
-  --background-color: #fff6f9;
-  --surface-color: #ffffff;
-  --primary-color: #2c2c2c;
-  --accent-color: #d88aa6;
-  --muted-text: #888;
-  --border-soft: rgba(0,0,0,0.05);
-}
-/* =========================
-   THEME 04 — MIDNIGHT EDITORIAL
-   ========================= */
-
-body.midnight-theme {
-  --background-color: #0c0c0f;
-  --surface-color: #16161b;
-  --primary-color: #f2f2f2;
-  --accent-color: #c4a15a;
-  --muted-text: #9a9a9a;
-  --border-soft: rgba(255,255,255,0.06);
-  --button-text-color: #ffffff;
-}
-/* =========================
-   THEME 05 — CHAMPAGNE NEUTRAL
-   ========================= */
-
+/* 02 — The Muse */
 body.champagne-theme {
-  --background-color: #f5efe6;
-  --surface-color: #ffffff;
-  --primary-color: #2d2d2d;
-  --accent-color: #b89b72;
-  --muted-text: #8b7f70;
-  --border-soft: rgba(0,0,0,0.06);
-  --button-text-color: #ffffff;
+  --heading-font: 'Cormorant Garamond', serif;
 }
-/* =========================
-   THEME 06 — POWER MINIMAL
-   ========================= */
 
-body.power-theme {
-  --background-color: #ffffff;
-  --surface-color: #ffffff;
-  --primary-color: #111111;
-  --accent-color: #000000;
-  --muted-text: #666;
-  --border-soft: rgba(0,0,0,0.1);
-  --button-text-color: #ffffff;
+body.champagne-theme h1,
+body.champagne-theme h2,
+body.champagne-theme h3 {
+  letter-spacing: 0.3px;
 }
-/* =========================
-   THEME 07 — ROSE NOIR
-   ========================= */
 
-body.rose-noir-theme {
-  --background-color: #1a0f14;
-  --surface-color: #23141b;
-  --primary-color: #f3e9ec;
-  --accent-color: #b04c72;
-  --muted-text: #a67a88;
-  --border-soft: rgba(255,255,255,0.05);
-  --button-text-color: #ffffff;
-}
-/* =========================
-   EMERALD LUXE THEME
-   ========================= */
-
-body.emerald-theme {
-  --background-color: #0f1a16;
-  --surface-color: #16231f;
-  --primary-color: #f1f5f2;
-  --accent-color: #1f7a5c;
-  --muted-text: #9fb3aa;
-  --border-soft: rgba(255,255,255,0.08);
-}
-/* =========================
-   WARM NEUTRAL THEME
-   ========================= */
-
+/* 03 — The Intimate */
 body.warm-neutral-theme {
-  --background-color: #f3ede6;
-  --surface-color: #ffffff;
-  --primary-color: #3a332c;
-  --accent-color: #b58a5f;
-  --muted-text: #8c8175;
-  --border-soft: rgba(0,0,0,0.06);
+  --heading-font: 'Cormorant Garamond', serif;
 }
 
-/* =========================
-   FLIRTY MAUVE THEME (DEEP ROMANTIC)
-   ========================= */
+body.warm-neutral-theme h1,
+body.warm-neutral-theme h2,
+body.warm-neutral-theme h3 {
+  letter-spacing: 0.5px;
+}
 
+/* 04 — The Romantic */
+body.soft-theme {
+  --heading-font: 'DM Serif Display', serif;
+}
+
+/* 05 — The Seductress */
 body.mauve-theme {
-  --background-color: #efe2e8;
-  --surface-color: #ffffff;
-  --primary-color: #2c1f25;
-  --accent-color: #8f4b63;
-  --muted-text: #735a63;
-  --border-soft: rgba(0,0,0,0.06);
-  --button-text-color: #ffffff;
+  --heading-font: 'DM Serif Display', serif;
+}
+
+body.mauve-theme h1,
+body.mauve-theme h2,
+body.mauve-theme h3 {
+  letter-spacing: 0.4px;
+}
+
+/* 06 — The Femme Fatale */
+body.rose-noir-theme {
+  --heading-font: 'Prata', serif;
+}
+
+body.rose-noir-theme h1,
+body.rose-noir-theme h2,
+body.rose-noir-theme h3 {
+  letter-spacing: 1px;
+}
+
+/* 07 — The Old Money */
+body.emerald-theme {
+  --heading-font: 'Cormorant Garamond', serif;
+}
+
+body.emerald-theme h1,
+body.emerald-theme h2,
+body.emerald-theme h3 {
+  letter-spacing: 0.6px;
+}
+
+/* 08 — The Night Elite */
+body.dark-theme {
+  --heading-font: 'Prata', serif;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+  letter-spacing: 1px;
+}
+
+/* 09 — The Editorial */
+body.midnight-theme {
+  --heading-font: 'Prata', serif;
+}
+
+body.midnight-theme h1,
+body.midnight-theme h2,
+body.midnight-theme h3 {
+  letter-spacing: 1.2px;
+}
+
+/* 10 — The Executive */
+body.power-theme {
+  --heading-font: 'Manrope', sans-serif;
+}
+
+body.power-theme h1,
+body.power-theme h2,
+body.power-theme h3 {
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
