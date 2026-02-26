@@ -1,5 +1,5 @@
 /* =========================================
-   IDENTITY TYPOGRAPHY LAYER
+   IDENTITY LAYER — COLOR + TYPOGRAPHY
    ========================================= */
 
 /* 01 — The Heiress (Default) */
@@ -7,8 +7,15 @@ body:not(.champagne-theme):not(.warm-neutral-theme):not(.soft-theme):not(.mauve-
   --heading-font: 'Cormorant Garamond', serif;
 }
 
-/* 02 — The Muse */
+/* 02 — The Muse (Espresso Luxe) */
 body.champagne-theme {
+  --background-color: #f4efe8;
+  --surface-color: #ffffff;
+  --primary-color: #3a2e26;
+  --accent-color: #a67c52;
+  --muted-text: #7a6a5f;
+  --border-soft: rgba(58,46,38,0.08);
+  --button-text-color: #ffffff;
   --heading-font: 'Cormorant Garamond', serif;
 }
 
@@ -18,8 +25,15 @@ body.champagne-theme h3 {
   letter-spacing: 0.3px;
 }
 
-/* 03 — The Intimate */
+/* 03 — The Intimate (Royal Blue Elite) */
 body.warm-neutral-theme {
+  --background-color: #0e1a2b;
+  --surface-color: #16263f;
+  --primary-color: #f2f2f2;
+  --accent-color: #c6a75e;
+  --muted-text: #aab4c2;
+  --border-soft: rgba(255,255,255,0.08);
+  --button-text-color: #ffffff;
   --heading-font: 'Cormorant Garamond', serif;
 }
 
