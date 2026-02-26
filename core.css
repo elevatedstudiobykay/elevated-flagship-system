@@ -21,6 +21,8 @@
    ========================= */
 
 :root {
+  --body-font: 'Inter', sans-serif;
+  --heading-font: 'Playfair Display', serif;
   --background-color: #f8f6f2;
   --surface-color: #ffffff;
   --primary-color: #1c1c1c;
@@ -34,7 +36,7 @@
    ========================= */
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--body-font);
   background: var(--background-color);
   color: var(--primary-color);
   line-height: 1.7;
@@ -98,7 +100,7 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--heading-font);
   font-size: 3.2rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
@@ -123,7 +125,7 @@ section {
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+font-family: var(--heading-font);
   text-align: center;
   margin-bottom: 60px;
   font-size: 2.2rem;
@@ -153,8 +155,8 @@ h2 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.card h3 {
-  font-family: 'Playfair Display', serif;
+  .card h3 {
+  font-family: var(--heading-font);
   margin-bottom: 15px;
 }
 
