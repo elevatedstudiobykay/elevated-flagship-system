@@ -1,8 +1,9 @@
 // =====================================
-// DEMO THEME SWITCHER (MULTI-THEME)
+// DEMO THEME SWITCHER ENGINE
 // =====================================
 
 const themeButtons = document.querySelectorAll(".swatch");
+const identityLabel = document.getElementById("active-identity");
 
 const allThemes = [
   "dark-theme",
@@ -16,45 +17,63 @@ const allThemes = [
   "mauve-theme"
 ];
 
+// Identity Display Names
+const identityNames = {
+  "": "The Heiress",
+  "champagne-theme": "The Muse",
+  "warm-neutral-theme": "The Intimate",
+  "soft-theme": "The Romantic",
+  "mauve-theme": "The Seductress",
+  "rose-noir-theme": "The Femme Fatale",
+  "emerald-theme": "The Old Money",
+  "dark-theme": "The Night Elite",
+  "midnight-theme": "The Editorial",
+  "power-theme": "The Executive"
+};
+
 // Load saved theme on page load
 const savedTheme = localStorage.getItem("selectedTheme");
 
 if (savedTheme && allThemes.includes(savedTheme)) {
-
   document.body.classList.add(savedTheme);
 
   const savedSwatch = document.querySelector(`.swatch[data-theme="${savedTheme}"]`);
   if (savedSwatch) savedSwatch.classList.add("active");
 
+  if (identityLabel) {
+    identityLabel.textContent = identityNames[savedTheme];
+  }
+
 } else {
 
-  // If no saved theme, activate default swatch
+  // Default identity
   const defaultSwatch = document.querySelector('.swatch[data-theme=""]');
   if (defaultSwatch) defaultSwatch.classList.add("active");
+
+  if (identityLabel) {
+    identityLabel.textContent = identityNames[""];
+  }
 }
 
 themeButtons.forEach(button => {
   button.addEventListener("click", () => {
 
-    // Remove all theme classes
     document.body.classList.remove(...allThemes);
-
-    // Remove active states
     themeButtons.forEach(b => b.classList.remove("active"));
 
-    // Get selected theme
     const theme = button.getAttribute("data-theme") || "";
 
-    // Apply theme if valid
     if (allThemes.includes(theme)) {
       document.body.classList.add(theme);
     }
 
-    // Save theme selection
     localStorage.setItem("selectedTheme", theme);
 
-    // Activate swatch visually
     button.classList.add("active");
 
+    if (identityLabel) {
+      identityLabel.textContent = identityNames[theme];
+    }
+
   });
-}); 
+});
