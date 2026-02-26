@@ -45,3 +45,6 @@
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
+#active-identity {
+  transition: opacity 0.25s ease;
+}
