@@ -1,4 +1,25 @@
 // =====================================
+// TEMPLATE VARIABLE REPLACER
+// =====================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  if (typeof CLIENT !== "undefined") {
+
+    document.body.innerHTML = document.body.innerHTML.replace(/{{(.*?)}}/g, (match, key) => {
+
+      if (key === "YEAR") return new Date().getFullYear();
+
+      return CLIENT[key] || "";
+
+    });
+
+  }
+
+});
+
+
+// =====================================
 // EXPANDABLE ARRANGEMENTS
 // =====================================
 
@@ -22,12 +43,11 @@ if (expandButtons.length > 0) {
 // EMAILJS BOOKING SYSTEM (DUAL CONFIRMATION)
 // =====================================
 
-// Prevent errors on pages without booking form
 const bookingForm = document.getElementById("booking-form");
 
-if (bookingForm) {
+if (bookingForm && typeof emailjs !== "undefined") {
 
-  emailjs.init("{{EMAILJS_PUBLIC_KEY}}");
+  emailjs.init(CLIENT.EMAILJS_PUBLIC_KEY);
 
   bookingForm.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -36,37 +56,46 @@ if (bookingForm) {
     const status = document.getElementById("form-status");
     const submitBtn = form.querySelector("button");
 
-submitBtn.disabled = true;
-submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
 
-    // 1️⃣ Send to Companion
+    // Send to Companion
     emailjs.sendForm(
-      "{{EMAILJS_SERVICE_ID}}",
-      "{{COMPANION_TEMPLATE_ID}}",
+      CLIENT.EMAILJS_SERVICE_ID,
+      CLIENT.COMPANION_TEMPLATE_ID,
       form
     )
     .then(() => {
 
-      // 2️⃣ Send Confirmation to Client
+      // Send Confirmation to Client
       return emailjs.sendForm(
-        "{{EMAILJS_SERVICE_ID}}",
-        "{{CLIENT_CONFIRMATION_TEMPLATE_ID}}",
+        CLIENT.EMAILJS_SERVICE_ID,
+        CLIENT.CLIENT_CONFIRMATION_TEMPLATE_ID,
         form
       );
 
     })
- .then(() => {
-  status.innerText = "Inquiry received. Please check your email for confirmation.";
-  submitBtn.disabled = false;
-  submitBtn.textContent = "Submit Inquiry";
-  form.reset();
-})
-  .catch(() => {
-  status.innerText = "There was an issue sending your inquiry. Please verify your information and try again.";
-  submitBtn.disabled = false;
-  submitBtn.textContent = "Submit Inquiry";
-});
+    .then(() => {
+
+      status.innerText = "Inquiry received. Please check your email for confirmation.";
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Inquiry";
+
+      form.reset();
+
+    })
+    .catch(() => {
+
+      status.innerText = "There was an issue sending your inquiry. Please verify your information and try again.";
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Inquiry";
+
+    });
+
   });
+
 }
 
 
@@ -106,4 +135,3 @@ navLinks.forEach(link => {
     link.style.color = "var(--accent-color)";
   }
 });
-
