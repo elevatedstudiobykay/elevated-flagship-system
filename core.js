@@ -1,18 +1,33 @@
 // =====================================
-// TEMPLATE VARIABLE REPLACER
+// TEMPLATE VARIABLE ENGINE
 // =====================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  if (typeof CLIENT !== "undefined") {
+  if (typeof CLIENT === "undefined") return;
 
-    document.body.innerHTML = document.body.innerHTML.replace(/{{(.*?)}}/g, (match, key) => {
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT,
+    null,
+    false
+  );
 
-      if (key === "YEAR") return new Date().getFullYear();
+  let node;
 
-      return CLIENT[key] || "";
+  while (node = walker.nextNode()) {
 
-    });
+    if (node.nodeValue && node.nodeValue.includes("{{")) {
+
+      node.nodeValue = node.nodeValue.replace(/{{(.*?)}}/g, (match, key) => {
+
+        if (key === "YEAR") return new Date().getFullYear();
+
+        return CLIENT[key] || "";
+
+      });
+
+    }
 
   }
 
@@ -26,16 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
 const expandButtons = document.querySelectorAll(".expand-btn");
 
 if (expandButtons.length > 0) {
+
   expandButtons.forEach(button => {
+
     button.addEventListener("click", () => {
+
       const card = button.closest(".card");
+
+      if (!card) return;
+
       card.classList.toggle("active");
 
       button.textContent = card.classList.contains("active")
         ? "Hide Details"
         : "View Details";
+
     });
-  }); 
+
+  });
+
 }
 
 
@@ -45,11 +69,12 @@ if (expandButtons.length > 0) {
 
 const bookingForm = document.getElementById("booking-form");
 
-if (bookingForm && typeof emailjs !== "undefined") {
+if (bookingForm && typeof emailjs !== "undefined" && typeof CLIENT !== "undefined") {
 
   emailjs.init(CLIENT.EMAILJS_PUBLIC_KEY);
 
   bookingForm.addEventListener("submit", function(e) {
+
     e.preventDefault();
 
     const form = this;
@@ -59,15 +84,14 @@ if (bookingForm && typeof emailjs !== "undefined") {
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending...";
 
-    // Send to Companion
     emailjs.sendForm(
       CLIENT.EMAILJS_SERVICE_ID,
       CLIENT.COMPANION_TEMPLATE_ID,
       form
     )
+
     .then(() => {
 
-      // Send Confirmation to Client
       return emailjs.sendForm(
         CLIENT.EMAILJS_SERVICE_ID,
         CLIENT.CLIENT_CONFIRMATION_TEMPLATE_ID,
@@ -75,9 +99,12 @@ if (bookingForm && typeof emailjs !== "undefined") {
       );
 
     })
+
     .then(() => {
 
-      status.innerText = "Inquiry received. Please check your email for confirmation.";
+      if (status) {
+        status.innerText = "Inquiry received. Please check your email for confirmation.";
+      }
 
       submitBtn.disabled = false;
       submitBtn.textContent = "Submit Inquiry";
@@ -85,9 +112,12 @@ if (bookingForm && typeof emailjs !== "undefined") {
       form.reset();
 
     })
+
     .catch(() => {
 
-      status.innerText = "There was an issue sending your inquiry. Please verify your information and try again.";
+      if (status) {
+        status.innerText = "There was an issue sending your inquiry. Please verify your information and try again.";
+      }
 
       submitBtn.disabled = false;
       submitBtn.textContent = "Submit Inquiry";
@@ -105,22 +135,33 @@ if (bookingForm && typeof emailjs !== "undefined") {
 
 const faders = document.querySelectorAll("section");
 
-const appearOptions = {
-  threshold: 0.15
-};
+if (faders.length > 0 && "IntersectionObserver" in window) {
 
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("visible");
-    observer.unobserve(entry.target);
+  const appearOptions = {
+    threshold: 0.15
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+
+    entries.forEach(entry => {
+
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+
+    });
+
+  }, appearOptions);
+
+  faders.forEach(fader => {
+
+    fader.classList.add("fade-in");
+    appearOnScroll.observe(fader);
+
   });
-}, appearOptions);
 
-faders.forEach(fader => {
-  fader.classList.add("fade-in");
-  appearOnScroll.observe(fader);
-});
+}
 
 
 // =====================================
@@ -130,8 +171,16 @@ faders.forEach(fader => {
 const currentPage = window.location.pathname.split("/").pop();
 const navLinks = document.querySelectorAll("nav a");
 
-navLinks.forEach(link => {
-  if (link.getAttribute("href") === currentPage) {
-    link.style.color = "var(--accent-color)";
-  }
-});
+if (navLinks.length > 0) {
+
+  navLinks.forEach(link => {
+
+    if (link.getAttribute("href") === currentPage) {
+
+      link.style.color = "var(--accent-color)";
+
+    }
+
+  });
+
+}
